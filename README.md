@@ -1,2 +1,2 @@
 # BLBPO
-Bilevel LLM Black-Box Prompt Optimization
+Bilevel Black-Box Prompt Optimization for LLM
