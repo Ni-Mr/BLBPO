@@ -1,0 +1,28 @@
+def get_prompt(ent1, ent2, text):
+    input_format = 'In 5G network, Whether [ent1] related to [ent2] ? Some contextual information: [text]. Note: [note]. Respond ONLY with "Yes" or "No". Answer: '
+    prompt = 'Question: ' + input_format
+    if '[ent1]' in prompt:
+        prompt = prompt.replace('[ent1]', f'\"{ent1}\"')
+    if '[ent2]' in prompt:
+        prompt = prompt.replace('[ent2]', f'\"{ent2}\"')
+    if '[text]' in prompt:
+        prompt = prompt.replace('[text]', f'\"{text}\"')
+    return prompt
+
+
+def get_prompt(sent1, sent2):
+    input_format = 'Whether sentence [sent1] and sentence [sent2] are semantically the same? Note: [note]. Respond ONLY with "Yes" or "No". Answer: '
+    prompt = 'Question: ' + input_format
+    if '[sent1]' in prompt:
+        prompt = prompt.replace('[sent1]', f'\"{sent1}\"')
+    if '[sent2]' in prompt:
+        prompt = prompt.replace('[sent2]', f'\"{sent2}\"')
+    return prompt
+
+
+def get_prompt(sent):
+    input_format = 'How is the sentiment of the sentence [sent]? Note: [note]. Respond ONLY with "Great" or "Terrible". Answer: '
+    prompt = 'Question: ' + input_format
+    if '[sent]' in prompt:
+        prompt = prompt.replace('[sent]', f'\"{sent}\"')
+    return prompt

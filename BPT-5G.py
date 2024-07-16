@@ -104,7 +104,7 @@ if __name__ == "__main__":
     parser.add_argument("--learning_rate", type=float, default=0.001, help="优化器学习率")
     parser.add_argument("--sample_size", type=int, default=5, help="求解策略梯度时的采样次数")
     parser.add_argument("--prompt_length", type=int, default=50, help="控制prompt生成长度(用词量)")
-    parser.add_argument("--prompt_search_space", type=int, default=200, help="控制vocabulary搜索范围")
+    parser.add_argument("--prompt_search_space", type=int, default=100, help="控制vocabulary搜索范围")
     parser.add_argument("--weight_decay", default=0.01, type=float)
     parser.add_argument("--best_accuracy", default=-float('inf'), type=float)
     parser.add_argument("--experiment_id", default=str(uuid.uuid4()), type=str)

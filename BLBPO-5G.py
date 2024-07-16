@@ -14,7 +14,7 @@ from tqdm import tqdm
 
 logger = Logger(__name__)
 logger.set_level(logger.INFO)
-logger.write('log-5G.txt')
+logger.write('BLBPO-5G.txt')
 
 
 def get_prompt(ent1, ent2, text):
@@ -96,12 +96,12 @@ if __name__ == "__main__":
                         help="The LLM service api-key")
     parser.add_argument("--k_shot_train", default=10, type=int, help="每种类别参与训练的数据量")
     parser.add_argument("--k_shot_test", default=0, type=int, help="每种类别参与测试的数据量，0 denotes full-shot")
-    parser.add_argument("--train_epochs", type=int, default=300, help="Total number of training epochs to perform.")
-    parser.add_argument("--save_ckpt_path", type=str, default="ckpt/5G", help="The path of the checkpoint params.")
+    parser.add_argument("--train_epochs", type=int, default=600, help="Total number of training epochs to perform.")
+    parser.add_argument("--save_ckpt_path", type=str, default="ckpt/BLBPO/5G", help="The path of the checkpoint params.")
     parser.add_argument("--use_ckpt", type=bool, default=False, help="If True, will use checkpoint.")
     parser.add_argument("--use_ckpt_path", type=str, default="", help="The path of the checkpoint params.")
     parser.add_argument("--just_test", type=bool, default=False, help="If True, will just test.")
-    parser.add_argument("--test_ckpt_path", type=str, default="ckpt/5G/",
+    parser.add_argument("--test_ckpt_path", type=str, default="ckpt/BLBPO/5G/",
                         help="The path of the checkpoint params.")
     parser.add_argument("--lr", type=float, default=0.001, help="割平面更新的学习率")
     parser.add_argument("--learning_rate", type=float, default=0.001, help="优化器学习率")
@@ -111,7 +111,7 @@ if __name__ == "__main__":
     parser.add_argument("--example_number", type=int, default=2, help="每种类别被选择的样本的数量")
     parser.add_argument("--example_search_space", type=int, default=100, help="example的搜索空间")
     parser.add_argument("--prompt_length", type=int, default=50, help="控制prompt生成长度(用词量)")
-    parser.add_argument("--prompt_search_space", type=int, default=200, help="控制vocabulary搜索范围")
+    parser.add_argument("--prompt_search_space", type=int, default=100, help="控制vocabulary搜索范围")
     parser.add_argument("--P", default=[], type=list, help="割平面约束集合.")
     parser.add_argument("--weight_decay", default=0.01, type=float)
     parser.add_argument("--best_accuracy", default=-float('inf'), type=float)
