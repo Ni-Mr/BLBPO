@@ -1,0 +1,7 @@
+tqdm
+wandb
+langchain_community
+openai
+zhipuai
+dashscope
+langchain_openai
